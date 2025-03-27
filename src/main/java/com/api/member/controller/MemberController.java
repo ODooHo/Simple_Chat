@@ -14,19 +14,19 @@ import com.global.response.ApiResponse;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/member")
 @RestController
 public class MemberController {
 
 	private final MemberService memberService;
 
-	@PostMapping("/member/signUp")
+	@PostMapping("/signUp")
 	public ApiResponse<Void> signUp(@RequestBody CreateMemberReq req) {
 		memberService.signUp(req);
 		return ApiResponse.ok();
 	}
 
-	@PostMapping("/member/login")
+	@PostMapping("/login")
 	public ApiResponse<LoginRes> login(@RequestBody LoginReq req) {
 		return ApiResponse.ok(memberService.login(req));
 	}
