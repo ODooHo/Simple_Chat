@@ -1,6 +1,7 @@
 package com.api.chatroom.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,7 @@ public class ChatRoomController {
 	private final ChatRoomService chatRoomService;
 
 	@PostMapping("/createOrGet")
-	public ApiResponse<CreateChatRoomRes> createOrGet(CreateChatRoomReq req) {
+	public ApiResponse<CreateChatRoomRes> createOrGet(@RequestBody CreateChatRoomReq req) {
 		return ApiResponse.ok(chatRoomService.createOrGetChatRoom(req));
 	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,13 +17,13 @@ import com.global.response.ApiResponse;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/{chatRoomId}/message")
+@RequestMapping("/api/v1/chatroom/{chatRoomId}/message")
 @RestController
 public class MessageController {
 	private final MessageService messageService;
 
 	@PostMapping("/send")
-	public ApiResponse<ReadMessageRes> sendMessage(CreateMessageReq req) {
+	public ApiResponse<ReadMessageRes> sendMessage(@RequestBody CreateMessageReq req) {
 		return ApiResponse.ok(messageService.sendMessage(req));
 	}
 
