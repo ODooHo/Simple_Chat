@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(V2z/WwjHNXPy2fZLve5rXy4WSP3OIeK5B2vDDQdokJf2e+LXmQAd/AKNSyZMsjxj)
+    username: ENC(D4aJMTOB56+x7i9Xp2tLPw==)
+    password:
+
+
+jwt:
+  secret-key: ENC(PzlR/xjkc3UVuK1r+SLOXFgixo7dxaY4pAUMIJIBj01okxRBVzDK8tX6T+iB3C/I)
